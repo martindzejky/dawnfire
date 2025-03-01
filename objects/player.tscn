@@ -29,9 +29,6 @@ libraries = {
 }
 autoplay = "idle"
 next/RESET = &"idle"
-next/club_attack = &"idle"
-next/kick = &"idle"
-next/pickup = &"idle"
 
 [node name="collision" type="CollisionShape2D" parent="."]
 scale = Vector2(1, 0.359999)

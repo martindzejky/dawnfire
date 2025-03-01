@@ -12,8 +12,8 @@ func _physics_process(_delta) -> void:
   # Get input direction
   var input_direction = Vector2.ZERO
 
-  # Only allow movement if not attacking or picking up
-  if !is_attacking() and !is_picking_up():
+  # Only allow movement if not attacking, picking up, or dropping
+  if !is_attacking() and !is_picking_up() and !is_dropping():
     input_direction.x = Input.get_axis('move_left', 'move_right')
     input_direction.y = Input.get_axis('move_up', 'move_down')
     input_direction = input_direction.normalized()
@@ -23,17 +23,20 @@ func _physics_process(_delta) -> void:
   move_and_slide()
 
   # Only check for inputs if not busy with animations
-  if !is_attacking() and !is_picking_up():
+  if !is_attacking() and !is_picking_up() and !is_dropping():
     # Check for attack input if cooldown is over
     if Input.is_action_just_pressed('attack') and !attack_cooldown.time_left:
       attack()
 
     # Check for interaction input
     if Input.is_action_just_pressed('interact'):
-      check_for_interaction()
+      if has_weapon():
+        animation.play('drop')
+      else:
+        check_for_interaction()
 
-  # Only update animations if not busy with attack or pickup animations
-  if !is_attacking() and !is_picking_up():
+  # Only update animations if not busy with attack, pickup, or drop animations
+  if !is_attacking() and !is_picking_up() and !is_dropping():
     # Handle animations based on movement
     if velocity.length() > 0:
       # Player is moving
@@ -62,6 +65,9 @@ func is_attacking() -> bool:
 
 func is_picking_up() -> bool:
   return animation.current_animation == 'pickup'
+
+func is_dropping() -> bool:
+  return animation.current_animation == 'drop'
 
 func has_weapon() -> bool:
   if weapon_slot == null:
@@ -124,6 +130,19 @@ func pick_up_object() -> void:
       weapon_sprite.frame = sprite.frame
 
       break
+
+func drop_weapon() -> void:
+  if !has_weapon():
+    return
+
+  var weapon = weapon_slot.get_child(0)
+
+  assert(weapon.on_ground_version != null, 'Weapon must have an on-ground version')
+  var weapon_on_ground = weapon.on_ground_version.instantiate()
+  get_parent().add_child(weapon_on_ground)
+  weapon_on_ground.global_position = weapon.global_position
+
+  weapon.queue_free()
 
 func _on_animation_animation_started(anim_name):
   # Check if player has a weapon
