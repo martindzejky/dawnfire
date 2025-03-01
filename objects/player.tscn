@@ -21,7 +21,7 @@ position = Vector2(8, -120)
 scale = Vector2(10, 10)
 texture = ExtResource("1_od2yy")
 hframes = 5
-vframes = 5
+vframes = 6
 
 [node name="animation" type="AnimationPlayer" parent="."]
 libraries = {

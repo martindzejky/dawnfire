@@ -7,13 +7,14 @@
 [node name="club_in_hand" type="Node2D"]
 script = ExtResource("1_y1ptv")
 on_ground_version = "res://objects/club_on_ground.tscn"
+attackAnimation = "club_attack"
 
 [node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(8, -120)
 scale = Vector2(10, 10)
 texture = ExtResource("1_sbu4b")
 hframes = 5
-vframes = 5
+vframes = 6
 
 [node name="animation" type="AnimationPlayer" parent="."]
 libraries = {

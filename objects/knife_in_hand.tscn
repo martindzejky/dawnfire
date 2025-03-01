@@ -7,13 +7,14 @@
 [node name="knife_in_hand" type="Node2D"]
 script = ExtResource("1_0tf1r")
 on_ground_version = "res://objects/knife_on_ground.tscn"
+attackAnimation = "club_attack"
 
 [node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(8, -120)
 scale = Vector2(10, 10)
 texture = ExtResource("2_gx5cn")
 hframes = 5
-vframes = 5
+vframes = 6
 
 [node name="animation" type="AnimationPlayer" parent="."]
 libraries = {

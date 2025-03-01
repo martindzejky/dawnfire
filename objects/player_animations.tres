@@ -1,4 +1,4 @@
-[gd_resource type="AnimationLibrary" load_steps=8 format=3 uid="uid://cp8aqq5stexak"]
+[gd_resource type="AnimationLibrary" load_steps=9 format=3 uid="uid://cp8aqq5stexak"]
 
 [sub_resource type="Animation" id="Animation_rkkdd"]
 length = 0.001
@@ -30,6 +30,37 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [10, 11, 12, 13, 14]
+}
+
+[sub_resource type="Animation" id="Animation_tifgh"]
+resource_name = "drop"
+length = 0.5
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [24, 23, 21, 20]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.25),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"drop_weapon"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_ikfx0"]
@@ -98,6 +129,23 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_jdw23"]
+resource_name = "spear_attack"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [25, 26, 27]
+}
+
 [sub_resource type="Animation" id="Animation_jkl45"]
 resource_name = "walk"
 length = 0.666667
@@ -116,37 +164,6 @@ tracks/0/keys = {
 "values": [6, 7, 8, 5]
 }
 
-[sub_resource type="Animation" id="Animation_tifgh"]
-resource_name = "drop"
-length = 0.5
-step = 0.125
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [24, 23, 21, 20]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.25),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"drop_weapon"
-}]
-}
-
 [resource]
 _data = {
 "RESET": SubResource("Animation_rkkdd"),
@@ -155,5 +172,6 @@ _data = {
 "idle": SubResource("Animation_ikfx0"),
 "kick": SubResource("Animation_k3p7q"),
 "pickup": SubResource("Animation_vx8yd"),
+"spear_attack": SubResource("Animation_jdw23"),
 "walk": SubResource("Animation_jkl45")
 }

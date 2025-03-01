@@ -61,7 +61,15 @@ func _physics_process(_delta) -> void:
     weapon_sprite.flip_h = sprite.flip_h
 
 func is_attacking() -> bool:
-  return animation.current_animation == 'kick' or animation.current_animation == 'club_attack'
+  # Check if current animation is kick or any weapon attack animation
+  if animation.current_animation == 'kick':
+    return true
+
+  if has_weapon():
+    var weapon = weapon_slot.get_child(0)
+    return animation.current_animation == weapon.attackAnimation
+
+  return false
 
 func is_picking_up() -> bool:
   return animation.current_animation == 'pickup'
@@ -79,7 +87,8 @@ func attack() -> void:
   attack_cooldown.start()
 
   if has_weapon():
-    animation.play('club_attack')
+    var weapon = weapon_slot.get_child(0)
+    animation.play(weapon.attackAnimation)
   else:
     animation.play('kick')
 
