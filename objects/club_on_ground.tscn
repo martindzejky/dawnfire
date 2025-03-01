@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://beygp1wpvpuu"]
+[gd_scene load_steps=5 format=3 uid="uid://beygp1wpvpuu"]
 
+[ext_resource type="Script" path="res://objects/club_on_ground.gd" id="1_f5l1v"]
 [ext_resource type="Texture2D" uid="uid://7vfrph4qtcxa" path="res://sprites/club.png" id="1_swbmx"]
+[ext_resource type="PackedScene" uid="uid://dayedckoppvib" path="res://objects/club_in_hand.tscn" id="2_qlyim"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jgfay"]
 radius = 40.0
 
-[node name="club_on_ground" type="Node2D"]
+[node name="club_on_ground" type="Node2D" groups=["weapon"]]
+script = ExtResource("1_f5l1v")
+in_hand_version = ExtResource("2_qlyim")
 
 [node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(0, -1.00001)

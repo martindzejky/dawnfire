@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dayedckoppvib"]
+
+[ext_resource type="Texture2D" uid="uid://7vfrph4qtcxa" path="res://sprites/club.png" id="1_sbu4b"]
+[ext_resource type="AnimationLibrary" uid="uid://cp8aqq5stexak" path="res://objects/player_animations.tres" id="2_k7hrb"]
+
+[node name="club_in_hand" type="Node2D"]
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(8, -120)
+scale = Vector2(10, 10)
+texture = ExtResource("1_sbu4b")
+hframes = 5
+vframes = 5
+
+[node name="animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": ExtResource("2_k7hrb")
+}
+autoplay = "idle"
