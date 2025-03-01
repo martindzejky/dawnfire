@@ -1,6 +1,6 @@
 # 🦴 Prehistoric Saturday Game
 
-![screenshot](./screenshots/sprites1.png)
+![screenshot](./screenshots/sprites.png)
 
 A small **2.5D top-down combat game** made in **one day** as part of my **Creative Saturday Challenge**. The focus of this challenge was primarily on **learning pixel art** and **implementing melee combat** in Godot for the first time. I managed to only implement a system for equipping weapons on the first day, no game to speak of yet.
 
