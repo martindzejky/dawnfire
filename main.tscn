@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=4 uid="uid://5oeqi8qkiv7b"]
+[gd_scene load_steps=4 format=4 uid="uid://5oeqi8qkiv7b"]
 
 [ext_resource type="PackedScene" uid="uid://bk7slfs2c1uxe" path="res://objects/player.tscn" id="1_7m2fy"]
 [ext_resource type="TileSet" uid="uid://cmr8t1hrou8d5" path="res://tiles/tiles.tres" id="1_rft56"]
+[ext_resource type="PackedScene" uid="uid://beygp1wpvpuu" path="res://objects/club_on_ground.tscn" id="3_3jkfb"]
 
 [node name="main" type="Node"]
 
@@ -15,3 +16,6 @@ tile_map_data = PackedByteArray("AAABAAAAAAACAAEAAAD+/wEAAAADAAEAAAD9/wAAAAADAAE
 tile_set = ExtResource("1_rft56")
 
 [node name="player" parent="sort" instance=ExtResource("1_7m2fy")]
+
+[node name="club_on_ground" parent="sort" instance=ExtResource("3_3jkfb")]
+position = Vector2(356, 163)

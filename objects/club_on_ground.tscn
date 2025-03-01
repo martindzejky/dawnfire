@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://beygp1wpvpuu"]
+
+[ext_resource type="Texture2D" uid="uid://7vfrph4qtcxa" path="res://sprites/club.png" id="1_swbmx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jgfay"]
+radius = 40.0
+
+[node name="club_on_ground" type="Node2D"]
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -1.00001)
+scale = Vector2(10, 10)
+texture = ExtResource("1_swbmx")
+region_enabled = true
+region_rect = Rect2(62, 117, 6, 3)
+
+[node name="pickup_area" type="Area2D" parent="."]
+collision_mask = 0
+monitoring = false
+
+[node name="shape" type="CollisionShape2D" parent="pickup_area"]
+scale = Vector2(1, 0.519998)
+shape = SubResource("CircleShape2D_jgfay")
