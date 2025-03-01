@@ -1,3 +1,17 @@
-[gd_scene format=3 uid="uid://5oeqi8qkiv7b"]
+[gd_scene load_steps=3 format=4 uid="uid://5oeqi8qkiv7b"]
 
-[node name="main" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://bk7slfs2c1uxe" path="res://objects/player.tscn" id="1_7m2fy"]
+[ext_resource type="TileSet" uid="uid://cmr8t1hrou8d5" path="res://tiles/tiles.tres" id="1_rft56"]
+
+[node name="main" type="Node"]
+
+[node name="sort" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="tiles" type="TileMapLayer" parent="sort"]
+y_sort_enabled = true
+scale = Vector2(10, 10)
+tile_map_data = PackedByteArray("AAABAAAAAAACAAEAAAD+/wEAAAADAAEAAAD9/wAAAAADAAEAAAD+////AAABAAIAAAAAAP7/AAABAAIAAAABAP//AAAAAAEAAAD//wEAAAAAAAEAAAD7//7/AAAAAAEAAAAAAAIAAAAAAAIAAAD//wIAAAAAAAIAAAA=")
+tile_set = ExtResource("1_rft56")
+
+[node name="player" parent="sort" instance=ExtResource("1_7m2fy")]

@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://bk7slfs2c1uxe"]
+
+[ext_resource type="Texture2D" uid="uid://yc7gsosgoflc" path="res://sprites/human1.png" id="1_od2yy"]
+[ext_resource type="Script" path="res://objects/player.gd" id="1_wff40"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p74eo"]
+atlas = ExtResource("1_od2yy")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkqby"]
+atlas = ExtResource("1_od2yy")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5f4o"]
+atlas = ExtResource("1_od2yy")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7lkg"]
+atlas = ExtResource("1_od2yy")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbqma"]
+atlas = ExtResource("1_od2yy")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0g4ct"]
+atlas = ExtResource("1_od2yy")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y67oe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p74eo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mkqby")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5f4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7lkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbqma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0g4ct")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5o5hv"]
+radius = 36.7213
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_wff40")
+
+[node name="camera" type="Camera2D" parent="."]
+position = Vector2(0, -116)
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, -120)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_y67oe")
+animation = &"walk"
+autoplay = "idle"
+
+[node name="collision" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 0.359999)
+shape = SubResource("CircleShape2D_5o5hv")
