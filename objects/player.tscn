@@ -1,7 +1,27 @@
-[gd_scene load_steps=11 format=3 uid="uid://bk7slfs2c1uxe"]
+[gd_scene load_steps=16 format=3 uid="uid://bk7slfs2c1uxe"]
 
 [ext_resource type="Texture2D" uid="uid://yc7gsosgoflc" path="res://sprites/human1.png" id="1_od2yy"]
 [ext_resource type="Script" path="res://objects/player.gd" id="1_wff40"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbw6k"]
+atlas = ExtResource("1_od2yy")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bmtx"]
+atlas = ExtResource("1_od2yy")
+region = Rect2(24, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34g0s"]
+atlas = ExtResource("1_od2yy")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvo4p"]
+atlas = ExtResource("1_od2yy")
+region = Rect2(72, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nv132"]
+atlas = ExtResource("1_od2yy")
+region = Rect2(96, 48, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p74eo"]
 atlas = ExtResource("1_od2yy")
@@ -29,6 +49,26 @@ region = Rect2(0, 24, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y67oe"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbw6k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7bmtx")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_34g0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvo4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nv132")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 14.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p74eo")
@@ -71,9 +111,15 @@ position = Vector2(0, -116)
 position = Vector2(8, -120)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_y67oe")
-animation = &"walk"
+animation = &"attack"
 autoplay = "idle"
 
 [node name="collision" type="CollisionShape2D" parent="."]
 scale = Vector2(1, 0.359999)
 shape = SubResource("CircleShape2D_5o5hv")
+
+[node name="attackCooldown" type="Timer" parent="."]
+wait_time = 0.6
+one_shot = true
+
+[connection signal="animation_finished" from="sprite" to="." method="_on_sprite_animation_finished"]
