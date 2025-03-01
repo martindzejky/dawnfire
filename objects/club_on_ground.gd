@@ -1,3 +1,3 @@
 extends Node2D
 
-@export var in_hand_version: PackedScene
+@export_file('*.tscn') var in_hand_version: String

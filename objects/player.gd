@@ -115,7 +115,7 @@ func pick_up_object() -> void:
 
       # Instantiate the in-hand version of the weapon
       assert(weapon.in_hand_version != null, 'Weapon must have an in-hand version')
-      var weapon_in_hand = weapon.in_hand_version.instantiate()
+      var weapon_in_hand = load(weapon.in_hand_version).instantiate()
 
       # Add it to the weapon slot
       weapon_slot.add_child(weapon_in_hand)
@@ -138,9 +138,19 @@ func drop_weapon() -> void:
   var weapon = weapon_slot.get_child(0)
 
   assert(weapon.on_ground_version != null, 'Weapon must have an on-ground version')
-  var weapon_on_ground = weapon.on_ground_version.instantiate()
+  var weapon_on_ground = load(weapon.on_ground_version).instantiate()
   get_parent().add_child(weapon_on_ground)
-  weapon_on_ground.global_position = weapon.global_position
+
+  # Get the drop point
+  var drop_point = weapon.get_node('drop_point')
+
+  # If weapon is flipped, we need to adjust the drop position accordingly
+  if weapon.get_node('sprite').flip_h:
+    # Mirror the drop point position around the weapon's center
+    weapon_on_ground.global_position = weapon.global_position - (drop_point.position - weapon.position)
+    weapon_on_ground.get_node('sprite').flip_h = true
+  else:
+    weapon_on_ground.global_position = drop_point.global_position
 
   weapon.queue_free()
 

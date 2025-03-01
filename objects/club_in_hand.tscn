@@ -1,13 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dayedckoppvib"]
+[gd_scene load_steps=4 format=3 uid="uid://dayedckoppvib"]
 
 [ext_resource type="Texture2D" uid="uid://7vfrph4qtcxa" path="res://sprites/club.png" id="1_sbu4b"]
 [ext_resource type="Script" path="res://objects/club_in_hand.gd" id="1_y1ptv"]
 [ext_resource type="AnimationLibrary" uid="uid://cp8aqq5stexak" path="res://objects/player_animations.tres" id="2_k7hrb"]
-[ext_resource type="PackedScene" uid="uid://beygp1wpvpuu" path="res://objects/club_on_ground.tscn" id="2_t6puq"]
 
 [node name="club_in_hand" type="Node2D"]
 script = ExtResource("1_y1ptv")
-on_ground_version = ExtResource("2_t6puq")
+on_ground_version = "res://objects/club_on_ground.tscn"
 
 [node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(8, -120)
@@ -22,3 +21,6 @@ libraries = {
 }
 autoplay = "idle"
 next/RESET = &"idle"
+
+[node name="drop_point" type="Marker2D" parent="."]
+position = Vector2(59, 0)
