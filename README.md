@@ -1,4 +1,4 @@
-# 🦴 Prehistoric Saturday Game
+# 🦴 Project Dawnfire
 
 ![screenshot](./screenshots/sprites.png)
 
