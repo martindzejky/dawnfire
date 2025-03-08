@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://5oeqi8qkiv7b"]
+[gd_scene load_steps=5 format=4 uid="uid://5oeqi8qkiv7b"]
 
 [ext_resource type="PackedScene" uid="uid://bk7slfs2c1uxe" path="res://objects/player.tscn" id="1_7m2fy"]
 [ext_resource type="TileSet" uid="uid://cmr8t1hrou8d5" path="res://tiles/tiles.tres" id="1_rft56"]
 [ext_resource type="PackedScene" uid="uid://beygp1wpvpuu" path="res://objects/club_on_ground.tscn" id="3_3jkfb"]
-[ext_resource type="PackedScene" uid="uid://dspd8srv5yvlx" path="res://objects/knife_on_ground.tscn" id="4_qt3xr"]
 [ext_resource type="PackedScene" uid="uid://b6vgvykc213x" path="res://objects/spear_on_ground.tscn" id="5_8sor7"]
 
 [node name="main" type="Node"]
@@ -21,9 +20,6 @@ tile_set = ExtResource("1_rft56")
 
 [node name="club_on_ground" parent="sort" instance=ExtResource("3_3jkfb")]
 position = Vector2(356, 163)
-
-[node name="knife_on_ground" parent="." instance=ExtResource("4_qt3xr")]
-position = Vector2(307, 341)
 
 [node name="spear_on_ground" parent="." instance=ExtResource("5_8sor7")]
 position = Vector2(-473, -188)
