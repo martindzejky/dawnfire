@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bk7slfs2c1uxe"]
 
 [ext_resource type="Texture2D" uid="uid://yc7gsosgoflc" path="res://sprites/human.png" id="1_od2yy"]
-[ext_resource type="Script" path="res://objects/player.gd" id="1_wff40"]
+[ext_resource type="Script" uid="uid://cvoa0yd3p6m7t" path="res://objects/player.gd" id="1_wff40"]
 [ext_resource type="AnimationLibrary" uid="uid://cp8aqq5stexak" path="res://objects/player_animations.tres" id="3_gsiyv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5o5hv"]

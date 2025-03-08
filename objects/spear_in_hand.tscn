@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ced5nfaugwqm5"]
 
-[ext_resource type="Script" path="res://objects/weapon_in_hand.gd" id="1_j5a3h"]
+[ext_resource type="Script" uid="uid://g3ccrn87ybtn" path="res://objects/weapon_in_hand.gd" id="1_j5a3h"]
 [ext_resource type="Texture2D" uid="uid://cq8ymgqn8ryik" path="res://sprites/spear.png" id="2_in2ag"]
 [ext_resource type="AnimationLibrary" uid="uid://cp8aqq5stexak" path="res://objects/player_animations.tres" id="3_2plka"]
 

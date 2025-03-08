@@ -166,12 +166,12 @@ tracks/0/keys = {
 
 [resource]
 _data = {
-"RESET": SubResource("Animation_rkkdd"),
-"club_attack": SubResource("Animation_pqr78"),
-"drop": SubResource("Animation_tifgh"),
-"idle": SubResource("Animation_ikfx0"),
-"kick": SubResource("Animation_k3p7q"),
-"pickup": SubResource("Animation_vx8yd"),
-"spear_attack": SubResource("Animation_jdw23"),
-"walk": SubResource("Animation_jkl45")
+&"RESET": SubResource("Animation_rkkdd"),
+&"club_attack": SubResource("Animation_pqr78"),
+&"drop": SubResource("Animation_tifgh"),
+&"idle": SubResource("Animation_ikfx0"),
+&"kick": SubResource("Animation_k3p7q"),
+&"pickup": SubResource("Animation_vx8yd"),
+&"spear_attack": SubResource("Animation_jdw23"),
+&"walk": SubResource("Animation_jkl45")
 }
