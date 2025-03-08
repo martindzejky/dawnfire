@@ -16,16 +16,21 @@ texture = ExtResource("1_5uars")
 1:1/0/y_sort_origin = 5
 2:1/0 = 0
 2:1/0/y_sort_origin = 6
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.252157, 4.397, 3.08893, 4.42852, 3.43565, 6.35122, -0.346716, 6.3197)
 3:1/0 = 0
 3:1/0/y_sort_origin = 6
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.63902, 4.86979, 2.61613, 4.96435, 2.93133, 6.35122, -1.82814, 6.25666)
 0:2/0 = 0
 0:2/0/z_index = -1
 1:2/0 = 0
 1:2/0/y_sort_origin = 5
 2:2/0 = 0
 2:2/0/y_sort_origin = 5
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.86875, 3.46228, 4.76827, 3.37159, 4.85723, 6.14715, -3.02465, 6.18273)
 3:2/0 = 0
 3:2/0/y_sort_origin = 5
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.19212, 3.45141, 6.2409, 3.38837, 6.87129, 6.19362, -4.79099, 6.06754)
 
 [resource]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_7iqbb")

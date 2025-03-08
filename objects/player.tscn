@@ -25,7 +25,7 @@ vframes = 6
 
 [node name="animation" type="AnimationPlayer" parent="."]
 libraries = {
-"": ExtResource("3_gsiyv")
+&"": ExtResource("3_gsiyv")
 }
 autoplay = "idle"
 next/RESET = &"idle"
